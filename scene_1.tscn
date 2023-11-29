@@ -22,6 +22,9 @@ stretch_mode = 5
 
 [node name="Node2D" type="Node2D" parent="."]
 
+[node name="pop_timer" type="Timer" parent="Node2D"]
+autostart = true
+
 [node name="Frieren" type="Area2D" parent="Node2D"]
 position = Vector2(0, 2)
 
@@ -52,4 +55,5 @@ offset_right = 1126.0
 offset_bottom = 56.0
 text = "main menu"
 
+[connection signal="timeout" from="Node2D/pop_timer" to="." method="_on_pop_timer_timeout"]
 [connection signal="pressed" from="Control/main menu" to="." method="_on_quit_pressed"]
